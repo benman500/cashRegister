@@ -41,15 +41,15 @@ function checkCashRegister(price, cash, cid) {
   }
   
   function calculateChangeDue(cashInDrawer, amountDue, cashUnits) {
-    let runningTotal = amountDue;
+    let runningTotal = amountDue.toFixed(2);
     let change = []
-    while (runningTotal.toFixed(2) != 0) {
+    while (runningTotal != 0) {
+     
       let largest = findlargestFitting(cashInDrawer, runningTotal, cashUnits)
       runningTotal -= largest[1]
       addChangeToChange(change, largest)
       subtractLargestFromCashInDrawer(cashInDrawer, largest)
-        runningTotal = runningTotal.toFixed(2)
-        
+      runningTotal = runningTotal.toFixed(2)
 
   
     }
@@ -99,3 +99,4 @@ function checkCashRegister(price, cash, cid) {
   
 }
 checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])
+  
