@@ -87,7 +87,7 @@ function checkCashRegister(price, cash, cid) {
     }
   }
   
-  
+  //comment
   
   function findAmountInDrawer(cashInDrawer) {
     let totalCash = 0;
